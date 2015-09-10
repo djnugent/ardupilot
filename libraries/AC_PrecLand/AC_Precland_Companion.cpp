@@ -49,6 +49,7 @@ void AC_PrecLand_Companion::handle_msg(mavlink_message_t* msg){
 	//parse mavlink message
 	__mavlink_landing_target_t packet;
     mavlink_msg_landing_target_decode(msg, &packet);
+    _timestamp = packet.time_usec;
     _bf_angle_to_target.x = packet.angle_x;
     _bf_angle_to_target.y = packet.angle_y;
     _distance_to_target = packet.distance;

@@ -39,6 +39,7 @@ private:
     // output from camera
     Vector2f                    _bf_angle_to_target;// last body-frame angle to target
     float                       _distance_to_target;//distance from the camera to target
+    uint64_t                    _timestamp;//Timestamp when the image was captured(synced via UAVCAN)
 
     //Indicator to notify if a new data from the camera has been received
     bool                        _new_estimate;
